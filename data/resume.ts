@@ -23,7 +23,7 @@ export const resumeData = {
         "Re-architected Excel-based workflows into backend-driven web platforms, improving data consistency, eliminating human errors, and adding auditable, traceable state transitions for supply-chain operations.",
         "Achieved 92%+ test coverage using the Jest framework, significantly reducing production bugs and technical debt.",
       ],
-      metrics: ["15% cloud cost reduction", "25–30% performance boost", "92%+ test coverage"],
+      metrics: [],
     },
     {
       company: "Nineleaps",
@@ -37,7 +37,7 @@ export const resumeData = {
         "Contributed to monorepo architecture, reducing code duplication by 30% and improving cross-project development efficiency.",
         "Optimized code with code-splitting and lazy loading, improving page load times by 25% and boosting Lighthouse scores.",
       ],
-      metrics: ["20% flow efficiency", "30% less code duplication", "25% faster page loads"],
+      metrics: [],
     },
   ],
   achievements: [
