@@ -14,8 +14,7 @@ export default function Projects() {
           viewport={{ once: true }}
           className="mb-12 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white to-violet-400 bg-clip-text text-transparent mb-3">
-            Projects
+          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-gray-900 to-violet-600 dark:from-white dark:to-violet-400 bg-clip-text text-transparent mb-3">
           </h2>
           <div className="w-16 h-0.5 bg-gradient-to-r from-blue-500 to-violet-500 mx-auto" />
         </motion.div>
@@ -62,7 +61,7 @@ export default function Projects() {
                     <Badge
                       key={tag}
                       variant="secondary"
-                      className="text-xs bg-violet-500/10 text-violet-300 border-violet-500/20"
+                      className="text-xs bg-violet-500/10 text-violet-700 dark:text-violet-300 border-violet-500/20"
                     >
                       {tag}
                     </Badge>

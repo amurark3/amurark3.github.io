@@ -13,8 +13,7 @@ export default function Education() {
           viewport={{ once: true }}
           className="mb-12 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white to-emerald-400 bg-clip-text text-transparent mb-3">
-            Education
+          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-gray-900 to-emerald-600 dark:from-white dark:to-emerald-400 bg-clip-text text-transparent mb-3">
           </h2>
           <div className="w-16 h-0.5 bg-gradient-to-r from-blue-500 to-violet-500 mx-auto" />
         </motion.div>

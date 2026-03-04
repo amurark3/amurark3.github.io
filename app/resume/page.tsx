@@ -1,14 +1,44 @@
 "use client";
+import { useRef } from "react";
 import Link from "next/link";
 import { resumeData } from "@/data/resume";
-import { Mail, Phone, Linkedin, MapPin } from "lucide-react";
+import { Mail, Phone, Linkedin, MapPin, Download } from "lucide-react";
 
 export default function ResumePage() {
   const { basics, experience, education, skills, certifications, languages, topSkills } = resumeData;
+  const resumeRef = useRef<HTMLDivElement>(null);
+
+  const handleDownload = async () => {
+    const element = resumeRef.current;
+    if (!element) return;
+    const html2pdf = (await import("html2pdf.js")).default;
+    html2pdf()
+      .set({
+        margin: [0.4, 0.5, 0.4, 0.5],
+        filename: "Aditya_Murarka_Resume.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { unit: "in", format: "letter", orientation: "portrait" },
+      })
+      .from(element)
+      .save();
+  };
 
   return (
     <main className="min-h-screen bg-white text-gray-900 py-12 px-4 print:p-0">
-      <div className="max-w-3xl mx-auto bg-white shadow-2xl rounded-2xl p-8 sm:p-12 print:shadow-none print:rounded-none">
+      {/* Action buttons */}
+      <div className="max-w-3xl mx-auto mb-4 flex justify-between items-center print:hidden">
+        <Link href="/" className="text-sm text-gray-500 hover:text-gray-700 underline">← Back to Portfolio</Link>
+        <button
+          onClick={handleDownload}
+          className="flex items-center gap-2 px-6 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
+        >
+          <Download className="h-4 w-4" />
+          Download PDF
+        </button>
+      </div>
+
+      <div ref={resumeRef} className="max-w-3xl mx-auto bg-white shadow-2xl rounded-2xl p-8 sm:p-12 print:shadow-none print:rounded-none">
         {/* Header */}
         <div className="border-b pb-6 mb-6">
           <h1 className="text-3xl font-bold text-gray-900">{basics.name}</h1>
@@ -111,17 +141,6 @@ export default function ResumePage() {
             ))}
           </div>
         </section>
-
-        {/* Print button */}
-        <div className="mt-8 text-center print:hidden">
-          <button
-            onClick={() => window.print()}
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors"
-          >
-            Download / Print PDF
-          </button>
-          <Link href="/" className="ml-4 text-sm text-gray-500 hover:text-gray-700 underline">← Back to Portfolio</Link>
-        </div>
       </div>
     </main>
   );
