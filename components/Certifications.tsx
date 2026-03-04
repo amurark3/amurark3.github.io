@@ -14,6 +14,7 @@ export default function Certifications() {
           className="mb-12 text-center"
         >
           <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-gray-900 to-orange-600 dark:from-white dark:to-orange-400 bg-clip-text text-transparent mb-3">
+            Certifications
           </h2>
           <div className="w-16 h-0.5 bg-gradient-to-r from-blue-500 to-violet-500 mx-auto" />
         </motion.div>
