@@ -15,7 +15,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           {/* Name */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-br from-white via-blue-100 to-blue-400 bg-clip-text text-transparent">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-4 bg-gradient-to-br from-gray-900 via-blue-700 to-blue-500 dark:from-white dark:via-blue-100 dark:to-blue-400 bg-clip-text text-transparent">
             {basics.name}
           </h1>
           {/* Title */}
@@ -72,9 +72,9 @@ export default function Hero() {
               size="lg"
               variant="outline"
               asChild
-              className="border-blue-500/40 text-blue-400 hover:bg-blue-500/10"
+              className="border-blue-500/40 text-blue-600 dark:text-blue-400 hover:bg-blue-500/10"
             >
-              <a href="/resume"><Download className="mr-2 h-4 w-4" />Download Resume</a>
+              <a href="/Aditya_Murarka_Resume.pdf" download="Aditya_Murarka_Resume.pdf"><Download className="mr-2 h-4 w-4" />Download Resume</a>
             </Button>
           </motion.div>
         </motion.div>
@@ -88,7 +88,7 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, 8, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-6 h-10 rounded-full border-2 border-white/20 flex items-start justify-center pt-2"
+            className="w-6 h-10 rounded-full border-2 border-foreground/20 flex items-start justify-center pt-2"
           >
             <div className="w-1 h-2 rounded-full bg-blue-400/60" />
           </motion.div>

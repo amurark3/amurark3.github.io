@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { useTheme } from "next-themes";
 
 interface Particle {
   x: number;
@@ -12,6 +13,7 @@ interface Particle {
 
 export default function AnimatedBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -20,10 +22,17 @@ export default function AnimatedBackground() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    const isLight = resolvedTheme === "light";
+
     if (prefersReduced) {
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-      gradient.addColorStop(0, "#0f1729");
-      gradient.addColorStop(1, "#1a0a2e");
+      if (isLight) {
+        gradient.addColorStop(0, "#f8fafc");
+        gradient.addColorStop(1, "#eef2ff");
+      } else {
+        gradient.addColorStop(0, "#0f1729");
+        gradient.addColorStop(1, "#1a0a2e");
+      }
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       return;
@@ -51,9 +60,15 @@ export default function AnimatedBackground() {
     function drawGradient() {
       if (!ctx || !canvas) return;
       const grad = ctx.createRadialGradient(width / 2, height / 2, 0, width / 2, height / 2, Math.max(width, height));
-      grad.addColorStop(0, "rgba(15,23,42,1)");
-      grad.addColorStop(0.5, "rgba(20,10,45,1)");
-      grad.addColorStop(1, "rgba(10,15,35,1)");
+      if (isLight) {
+        grad.addColorStop(0, "rgba(248,250,252,1)");
+        grad.addColorStop(0.5, "rgba(238,242,255,1)");
+        grad.addColorStop(1, "rgba(241,245,249,1)");
+      } else {
+        grad.addColorStop(0, "rgba(15,23,42,1)");
+        grad.addColorStop(0.5, "rgba(20,10,45,1)");
+        grad.addColorStop(1, "rgba(10,15,35,1)");
+      }
       ctx.fillStyle = grad;
       ctx.fillRect(0, 0, width, height);
     }
@@ -63,7 +78,9 @@ export default function AnimatedBackground() {
       particles.forEach((p) => {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(99,179,237,${p.opacity})`;
+        ctx.fillStyle = isLight
+          ? `rgba(59,130,246,${p.opacity * 0.5})`
+          : `rgba(99,179,237,${p.opacity})`;
         ctx.fill();
       });
     }
@@ -80,7 +97,10 @@ export default function AnimatedBackground() {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(99,179,237,${0.08 * (1 - dist / MAX_DIST)})`;
+            const alpha = isLight ? 0.06 : 0.08;
+            ctx.strokeStyle = isLight
+              ? `rgba(59,130,246,${alpha * (1 - dist / MAX_DIST)})`
+              : `rgba(99,179,237,${alpha * (1 - dist / MAX_DIST)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
@@ -119,7 +139,7 @@ export default function AnimatedBackground() {
       cancelAnimationFrame(animId);
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [resolvedTheme]);
 
   return (
     <canvas

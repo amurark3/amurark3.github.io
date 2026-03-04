@@ -13,12 +13,12 @@ const skillGroups = [
 ];
 
 const colorMap: Record<string, string> = {
-  blue: "border-blue-500/20 bg-blue-500/10 text-blue-300",
-  violet: "border-violet-500/20 bg-violet-500/10 text-violet-300",
-  cyan: "border-cyan-500/20 bg-cyan-500/10 text-cyan-300",
-  emerald: "border-emerald-500/20 bg-emerald-500/10 text-emerald-300",
-  orange: "border-orange-500/20 bg-orange-500/10 text-orange-300",
-  rose: "border-rose-500/20 bg-rose-500/10 text-rose-300",
+  blue: "border-blue-500/20 bg-blue-500/10 text-blue-700 dark:text-blue-300",
+  violet: "border-violet-500/20 bg-violet-500/10 text-violet-700 dark:text-violet-300",
+  cyan: "border-cyan-500/20 bg-cyan-500/10 text-cyan-700 dark:text-cyan-300",
+  emerald: "border-emerald-500/20 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300",
+  orange: "border-orange-500/20 bg-orange-500/10 text-orange-700 dark:text-orange-300",
+  rose: "border-rose-500/20 bg-rose-500/10 text-rose-700 dark:text-rose-300",
 };
 
 const iconColorMap: Record<string, string> = {
@@ -40,7 +40,7 @@ export default function Skills() {
           viewport={{ once: true }}
           className="mb-12 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-white to-cyan-400 bg-clip-text text-transparent mb-3">
+          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-gray-900 to-cyan-600 dark:from-white dark:to-cyan-400 bg-clip-text text-transparent mb-3">
             Skills
           </h2>
           <div className="w-16 h-0.5 bg-gradient-to-r from-blue-500 to-violet-500 mx-auto" />
