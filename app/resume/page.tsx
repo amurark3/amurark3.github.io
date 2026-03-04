@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { resumeData } from "@/data/resume";
 import { Mail, Phone, Linkedin, MapPin } from "lucide-react";
 import Link from "next/link";
