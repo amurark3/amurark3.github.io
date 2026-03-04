@@ -7,6 +7,7 @@ import ScrollSpy from "@/components/ScrollSpy";
 import Hero from "@/components/Hero";
 import TopImpact from "@/components/TopImpact";
 import Experience from "@/components/Experience";
+import Projects from "@/components/Projects";
 import Achievements from "@/components/Achievements";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
@@ -28,6 +29,7 @@ export default function Home() {
           <Hero />
           <TopImpact />
           <Experience />
+          <Projects />
           <Achievements />
           <Skills />
           <Education />
