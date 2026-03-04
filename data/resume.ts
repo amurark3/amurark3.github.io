@@ -13,11 +13,11 @@ export const resumeData = {
     {
       company: "Walmart Global Tech India",
       title: "Software Engineer III",
-      period: "March 2022 – July 2024",
-      location: "Bengaluru, Karnataka, India",
+      period: "March 2022 - July 2024",
+      location: "Bangalore, Karnataka, India",
       bullets: [
         "Engineered an Adobe Analytics dashboard to track supply chain activity, leading to the cleanup of idle resources and achieving a 15% decrease in cloud spending.",
-        "Migrated multiple high-impact AngularJS components to ReactJS, which boosted screen performance by 25–30%, and supported easier feature development.",
+        "Migrated multiple high-impact AngularJS components to ReactJS, which boosted screen performance by 25-30%, and supported easier feature development.",
         "Built an event-driven notification pipeline using a Kafka consumer in a Spring Boot backend, exposing REST APIs for user preferences and alert history, and pushing real-time notifications to a React frontend via WebSockets.",
         "Implemented IAM-driven authorization using JWT token to enforce secure, feature-level authorization, enabling granular, scalable access management across the application.",
         "Re-architected Excel-based workflows into backend-driven web platforms, improving data consistency, eliminating human errors, and adding auditable, traceable state transitions for supply-chain operations.",
@@ -27,9 +27,9 @@ export const resumeData = {
     },
     {
       company: "Nineleaps",
-      title: "Software Developer Engineer 1",
-      period: "Aug 2019 – March 2022",
-      location: "Bangalore Urban, Karnataka, India",
+      title: "Software Developer 1",
+      period: "Aug 2019 - March 2022",
+      location: "Bangalore, Karnataka, India",
       bullets: [
         "Created interactive dashboards with Chart.js that enabled users to track KPIs in real time and cut manual reporting effort by providing the option to download and share these reports.",
         "Engineered reusable multi-step form components with validations, improving the efficiency of the flow by 20% and improving overall user experience.",
@@ -51,38 +51,39 @@ export const resumeData = {
   education: [
     {
       school: "Arizona State University",
-      degree: "Master of Science - MS",
+      degree: "Master of Science (M.S.)",
       field: "Computer Software Engineering",
-      period: "August 2024 – May 2026",
+      period: "August 2024 - May 2026",
     },
     {
       school: "Manipal University Jaipur",
-      degree: "BTech - Bachelor of Technology",
-      field: "Computer Science",
-      period: "2015 – 2019",
+      degree: "Bachelor of Technology (B.Tech)",
+      field: "Computer Science and Engineering",
+      period: "August 2015 - May 2019",
     },
   ],
   projects: [
     {
-      title: "AI-Powered Knowledge Graph System",
+      title: "F1 AI",
       organization: "Arizona State University",
-      year: "2025",
+      year: "May 2025 - July 2025",
       bullets: [
-        "Built a knowledge extraction and query system using RAG (Retrieval-Augmented Generation) with SPARQL and GraphDB",
-        "Implemented MCP (Model Context Protocol) for agentic AI interactions",
-        "Used Python, FastAPI, PyTorch, NumPy, Pandas for backend AI pipeline",
+        "Developed an AI-powered Formula 1 race engineer assistant using Next.js, FastAPI, and Tailwind CSS, featuring a natural language chatbot that leverages an MCP server to dynamically invoke backend tools for race schedules, standings, session results, and driver comparisons."
       ],
       tech: ["Python", "FastAPI", "PyTorch", "NumPy", "Pandas", "RAG", "SPARQL", "GraphDB", "MCP"],
     },
     {
-      title: "Software Engineering Capstone Projects",
+      title: "Gotham Watch",
       organization: "Arizona State University",
-      year: "2024–2025",
+      year: "Oct 2024 - Dec 2024",
       bullets: [
-        "Applied software engineering principles in team-based projects",
-        "Worked with cloud infrastructure (Microsoft Azure), CI/CD pipelines, and modern development workflows",
+        "Developed a full-stack crime analytics dashboard using React 18, Vite, and Ant Design, featuring an interactive US county-level choropleth heat map and dynamic pie chart visualizations powered by d3-scale and react-google-charts.",
+        "Engineered a Python Flask REST API that dynamically constructs SPARQL queries against a GraphDB RDF triple store, enabling real-time retrieval of crime data across 7 crime categories, 50 US states, and 4 years (2011-2014) from a custom OWL ontology.",
+        "Designed a semantic data model using RDF/OWL with structured classes (State, County, CrimeYear, CrimeCategory) and deployed the knowledge graph to a GraphDB instance, demonstrating proficiency in Semantic Web technologies and linked data principles.",
+        "Shipped 4 interactive use cases — state/county drill-down filtering, crime frequency visualization, and multi-year geographic heat mapping using FIPS codes — and deployed the frontend to GitHub Pages for public access."
+
       ],
-      tech: ["Microsoft Azure", "CI/CD", "Cloud Infrastructure", "Software Engineering"],
+      tech: ["Python", "Flask", "React", "SPARQL", "GraphDB", "Vite", "Ant Design", "d3-scale", "react-google-charts"],
     },
   ],
 };
