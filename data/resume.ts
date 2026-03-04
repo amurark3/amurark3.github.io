@@ -83,6 +83,29 @@ export const resumeData = {
     "Machine Learning",
     "The Data Scientist's Toolbox",
   ],
+  projects: [
+    {
+      title: "AI-Powered Knowledge Graph System",
+      organization: "Arizona State University",
+      year: "2025",
+      bullets: [
+        "Built a knowledge extraction and query system using RAG (Retrieval-Augmented Generation) with SPARQL and GraphDB",
+        "Implemented MCP (Model Context Protocol) for agentic AI interactions",
+        "Used Python, FastAPI, PyTorch, NumPy, Pandas for backend AI pipeline",
+      ],
+      tech: ["Python", "FastAPI", "PyTorch", "NumPy", "Pandas", "RAG", "SPARQL", "GraphDB", "MCP"],
+    },
+    {
+      title: "Software Engineering Capstone Projects",
+      organization: "Arizona State University",
+      year: "2024–2025",
+      bullets: [
+        "Applied software engineering principles in team-based projects",
+        "Worked with cloud infrastructure (Microsoft Azure), CI/CD pipelines, and modern development workflows",
+      ],
+      tech: ["Microsoft Azure", "CI/CD", "Cloud Infrastructure", "Software Engineering"],
+    },
+  ],
   languages: [
     { language: "English", proficiency: "Native or Bilingual" },
     { language: "Hindi", proficiency: "Native or Bilingual" },
