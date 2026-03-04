@@ -2,7 +2,7 @@
 import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 
-const SECTION_IDS = ["hero", "experience", "projects", "achievements", "skills", "education", "certifications", "additional", "contact"];
+const SECTION_IDS = ["hero", "experience", "projects", "skills", "education", "contact"];
 
 export default function ScrollSpy() {
   const [progress, setProgress] = useState(0);

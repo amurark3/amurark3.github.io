@@ -40,19 +40,6 @@ export const resumeData = {
       metrics: [],
     },
   ],
-  achievements: [
-    { label: "Cloud Cost Reduction", value: 15, suffix: "%", description: "Decrease in cloud spending via Adobe Analytics insights" },
-    { label: "Screen Performance Boost", value: 30, suffix: "%", description: "Improvement migrating AngularJS to ReactJS" },
-    { label: "Test Coverage", value: 92, suffix: "%+", description: "Achieved with Jest framework at Walmart" },
-    { label: "Flow Efficiency", value: 20, suffix: "%", description: "Improvement via reusable multi-step form components" },
-    { label: "Code Duplication Reduced", value: 30, suffix: "%", description: "Via monorepo architecture at Nineleaps" },
-    { label: "Page Load Improvement", value: 25, suffix: "%", description: "Via code-splitting and lazy loading" },
-  ],
-  topImpact: [
-    { label: "Cloud Cost Reduction", value: 15, suffix: "%" },
-    { label: "Test Coverage", value: 92, suffix: "%+" },
-    { label: "Performance Boost", value: 30, suffix: "%" },
-  ],
   skills: {
     languages: ["JavaScript", "TypeScript", "Python", "Java", "SQL", "SPARQL"],
     aiml: ["Model Context Protocol (MCP)", "Retrieval-Augmented Generation (RAG)", "PyTorch", "NumPy", "Pandas", "Agentic AI"],
@@ -61,7 +48,6 @@ export const resumeData = {
     tools: ["Microsoft Azure", "Kafka", "GraphDB", "Postman", "JWT", "Git", "WSL"],
     testing: ["Jest", "React Testing Library", "Adobe Analytics", "Google Analytics"],
   },
-  topSkills: ["Software Development", "Back-End Web Development", "Full-Stack Development"],
   education: [
     {
       school: "Arizona State University",
@@ -75,13 +61,6 @@ export const resumeData = {
       field: "Computer Science",
       period: "2015 – 2019",
     },
-  ],
-  certifications: [
-    "R Programming",
-    "SQL for Data Science",
-    "Responsive Web Design",
-    "Machine Learning",
-    "The Data Scientist's Toolbox",
   ],
   projects: [
     {
@@ -105,9 +84,5 @@ export const resumeData = {
       ],
       tech: ["Microsoft Azure", "CI/CD", "Cloud Infrastructure", "Software Engineering"],
     },
-  ],
-  languages: [
-    { language: "English", proficiency: "Native or Bilingual" },
-    { language: "Hindi", proficiency: "Native or Bilingual" },
   ],
 };

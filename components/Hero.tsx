@@ -74,7 +74,7 @@ export default function Hero() {
               asChild
               className="border-blue-500/40 text-blue-600 dark:text-blue-400 hover:bg-blue-500/10"
             >
-              <a href="/resume"><Download className="mr-2 h-4 w-4" />Download Resume</a>
+              <a href="/Aditya_Murarka_Resume.pdf" download="Aditya_Murarka_Resume.pdf"><Download className="mr-2 h-4 w-4" />Download Resume</a>
             </Button>
           </motion.div>
         </motion.div>
