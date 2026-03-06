@@ -1,0 +1,200 @@
+{
+  "basics": {
+    "name": "Aditya Murarka",
+    "title": "Software Engineer | MS in Software Engineering @ ASU | Ex-Walmart Global Tech (Level III)",
+    "summary": "Software engineer with 5+ years of industry experience building and scaling production systems. I've worked on large-scale enterprise applications, modernized legacy systems, and designed backend services, event-driven pipelines, and secure access controls to deliver reliable, high-performance products.\nCurrently pursuing a Master's in Software Engineering at Arizona State University (Expected May 2026). Through academic and personal projects, I've applied AI within backend systems to solve practical engineering problems. Open to full-time software engineering opportunities in the U.S.",
+    "location": "Tempe, Arizona, United States",
+    "email": "adityamurarka14@gmail.com",
+    "phone": "+1 (623) 275-2054",
+    "links": {
+      "linkedin": "www.linkedin.com/in/adityamurarka14",
+      "email_backup": "amuarark3@asu.edu"
+    }
+  },
+  "experience": [
+    {
+      "company": "Walmart Global Tech India",
+      "role": "Software Engineer III",
+      "dates": "March 2022 - July 2024",
+      "location": "Bengaluru, Karnataka, India",
+      "bullets": [
+        "Engineered an Adobe Analytics dashboard to track supply chain activity, leading to the cleanup of idle resources and achieving a 15% decrease in cloud spending.",
+        "Migrated multiple high-impact AngularJS components to ReactJS, which boosted screen performance by 25–30%, and supported easier feature development.",
+        "Built an event-driven notification pipeline using a Kafka consumer in a Spring Boot backend, exposing REST APIs for user preferences and alert history, and pushing real-time notifications to a React frontend via WebSockets.",
+        "Implemented IAM-driven authorization using JWT token to enforce secure, feature-level authorization, enabling granular, scalable access management across the application.",
+        "Re-architected Excel-based workflows into backend-driven web platforms, improving data consistency, eliminating human errors, and adding auditable, traceable state transitions for supply-chain operations.",
+        "Achieved 92%+ test coverage using the Jest framework, significantly reducing production bugs and technical debt."
+      ]
+    },
+    {
+      "company": "Nineleaps",
+      "role": "Software Developer Engineer 1",
+      "dates": "Aug 2019 - March 2022",
+      "location": "Bangalore Urban, Karnataka, India",
+      "bullets": [
+        "Created interactive dashboards with Chart.js that enabled users to track KPIs in real time and cut manual reporting effort by providing the option to download and share these reports.",
+        "Engineered reusable multi-step form components with validations, improving the efficiency of the flow by 20% and improving overall user experience.",
+        "Introduced Storybook for component documentation, reducing onboarding time and cutting UI integration bugs.",
+        "Contributed to monorepo architecture, reducing code duplication by 30% and improving cross-project development efficiency.",
+        "Optimized code with code-splitting and lazy loading, improving page load times by 25% and boosting Lighthouse scores."
+      ]
+    }
+  ],
+  "achievements": [
+    {
+      "title": "Cloud Cost Optimization",
+      "metric": "15% decrease",
+      "context": "Engineered an Adobe Analytics dashboard to track supply chain activity, leading to cleanup of idle resources."
+    },
+    {
+      "title": "Performance Boost",
+      "metric": "25–30% boost",
+      "context": "Migrated multiple high-impact AngularJS components to ReactJS, enhancing screen performance."
+    },
+    {
+      "title": "Efficient Form Flows",
+      "metric": "20% improvement",
+      "context": "Engineered reusable multi-step form components with validations."
+    },
+    {
+      "title": "Code Reusability",
+      "metric": "30% reduction",
+      "context": "Contributed to monorepo architecture, reducing code duplication."
+    },
+    {
+      "title": "Page Load Optimization",
+      "metric": "25% improvement",
+      "context": "Optimized code with code-splitting and lazy loading."
+    },
+    {
+      "title": "Code Quality",
+      "metric": "92%+ coverage",
+      "context": "Test coverage using the Jest framework."
+    }
+  ],
+  "projects": [
+    {
+      "title": "F1 AI",
+      "location": "Arizona State University, Tempe, AZ",
+      "dates": "May 2025 – Jul 2025",
+      "url": "https://f1-ai-delta.vercel.app",
+      "bullets": [
+        "Developed an AI-powered Formula 1 race engineer assistant using Next.js, FastAPI, and Tailwind CSS, featuring a natural language chatbot that leverages an MCP server to dynamically invoke backend tools for race schedules, standings, session results, and driver comparisons."
+      ]
+    },
+    {
+      "title": "Gotham Watch – Crime Analysis Platform",
+      "location": "Arizona State University, Tempe, AZ",
+      "dates": "Oct 2024 – Dec 2024",
+      "url": "https://github.com/amurark3/gotham-watch",
+      "bullets": [
+        "Built an interactive crime analysis platform using Python, React.js, and GraphDB, leading data preprocessing, backend architecture with Flask and SPARQL queries, dynamic visualizations, and deployment on Microsoft Azure for scalable real-time access."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Languages",
+      "items": [
+        "JavaScript",
+        "TypeScript",
+        "Python",
+        "Java",
+        "SQL",
+        "SPARQL"
+      ]
+    },
+    {
+      "category": "AI/ML",
+      "items": [
+        "Model Context Protocol (MCP)",
+        "Retrieval-Augmented Generation (RAG)",
+        "PyTorch",
+        "NumPy",
+        "Pandas",
+        "Agentic AI"
+      ]
+    },
+    {
+      "category": "Frontend",
+      "items": [
+        "Next.js",
+        "React.js",
+        "Redux",
+        "Tailwind CSS",
+        "Storybook",
+        "Chart.js"
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        "FastAPI",
+        "Flask",
+        "Spring Boot",
+        "Node.js",
+        "REST APIs",
+        "WebSockets"
+      ]
+    },
+    {
+      "category": "Tools & Infrastructures",
+      "items": [
+        "Microsoft Azure",
+        "Kafka",
+        "GraphDB",
+        "Postman",
+        "JWT",
+        "Git",
+        "WSL"
+      ]
+    },
+    {
+      "category": "Testing & Analytics",
+      "items": [
+        "Jest",
+        "React Testing Library",
+        "Adobe Analytics",
+        "Google Analytics"
+      ]
+    },
+    {
+      "category": "Spoken Languages",
+      "items": [
+        "English (Native or Bilingual)",
+        "Hindi (Native or Bilingual)"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "institution": "Arizona State University",
+      "degree": "Master of Science - MS, Computer Software Engineering",
+      "dates": "August 2024 - May 2026",
+      "location": "Tempe, Arizona, United States"
+    },
+    {
+      "institution": "Manipal University Jaipur",
+      "degree": "BTech - Bachelor of Technology, Computer Science",
+      "dates": "2015 - 2019",
+      "location": "Jaipur, Rajasthan, India"
+    }
+  ],
+  "certifications": [
+    "R Programming",
+    "SQL for Data Science",
+    "Responsive Web Design",
+    "Machine Learning",
+    "The Data Scientist's Toolbox"
+  ],
+  "awards": [
+    "Excellence award recipient at Walmart Global Tech India for outstanding performance in developing Omni Item Allocation features, performance optimizations, and implementing comprehensive analytics tracking (May 2023)",
+    "Spotlight award winner for outstanding project execution and team collaboration at Nineleaps (Mar 2021)",
+    "Hackathon champion \"Million Dollar Idea\" award for innovative business solution at Nineleaps (Jun 2019)",
+    "Multiple \"Feather on the Hat\" awards for consistent high performance and exemplary work quality at Nineleaps"
+  ],
+  "extra": [
+    "Graduating May 2026",
+    "Top Skills: Software Development, Back-End Web Development, Full-Stack Development"
+  ]
+}
