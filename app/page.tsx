@@ -1,35 +1,57 @@
 "use client";
+
 import { useState } from "react";
-import AnimatedBackground from "@/components/AnimatedBackground";
-import SplashScreen from "@/components/SplashScreen";
-import Navbar from "@/components/Navbar";
-import ScrollSpy from "@/components/ScrollSpy";
-import Hero from "@/components/Hero";
-import Experience from "@/components/Experience";
-import Projects from "@/components/Projects";
-import Skills from "@/components/Skills";
-import Education from "@/components/Education";
-import Contact from "@/components/Contact";
+import { Splash } from "@/components/Splash";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
+import { HeroSection } from "@/components/HeroSection";
+import { ExperienceSection } from "@/components/ExperienceSection";
+import { ProjectsSection } from "@/components/ProjectsSection";
+import { AchievementsSection } from "@/components/AchievementsSection";
+import { SkillsSection } from "@/components/SkillsSection";
+import { EducationSection } from "@/components/EducationSection";
+import { NavBar } from "@/components/NavBar";
 
 export default function Home() {
-  const [splashDone, setSplashDone] = useState(false);
+  const [showSplash, setShowSplash] = useState(true);
 
   return (
-    <>
-      {!splashDone && <SplashScreen onComplete={() => setSplashDone(true)} />}
-      <AnimatedBackground />
-      <div className="relative z-10">
-        <ScrollSpy />
-        <Navbar />
-        <main>
-          <Hero />
-          <Experience />
-          <Projects />
-          <Skills />
-          <Education />
-          <Contact />
-        </main>
-      </div>
-    </>
+    <main className="relative min-h-screen selection:bg-blue-500/30">
+      {showSplash ? (
+        <Splash onComplete={() => setShowSplash(false)} />
+      ) : (
+        <>
+          <AnimatedBackground />
+          <NavBar />
+
+          <div id="hero">
+            <HeroSection />
+          </div>
+
+          <div id="experience">
+            <ExperienceSection />
+          </div>
+
+          <div id="projects">
+            <ProjectsSection />
+          </div>
+
+          <div id="achievements">
+            <AchievementsSection />
+          </div>
+
+          <div id="skills">
+            <SkillsSection />
+          </div>
+
+          <div id="education">
+            <EducationSection />
+          </div>
+
+          <footer className="py-12 text-center text-gray-500 text-sm border-t border-white/5 relative z-10 glass-card">
+            <p>© {new Date().getFullYear()} Aditya Murarka. All rights reserved.</p>
+          </footer>
+        </>
+      )}
+    </main>
   );
 }
