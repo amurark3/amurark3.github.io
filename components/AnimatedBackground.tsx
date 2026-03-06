@@ -16,8 +16,7 @@ export function AnimatedBackground() {
         if (!ctx) return;
 
         let animationFrameId: number;
-        // eslint-disable-next-line prefer-const
-        let particles: Particle[] = [];
+        const particles: Particle[] = [];
 
         // Resize handler
         const handleResize = () => {
@@ -60,7 +59,7 @@ export function AnimatedBackground() {
         }
 
         const initParticles = () => {
-            particles.length = 0; // Clear rather than re-assign
+            particles.length = 0;
             // Adjust particle count based on screen size to save mobile performance
             const isMobile = window.innerWidth < 768;
             const count = isMobile ? 30 : 70;
