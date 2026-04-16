@@ -1,7 +1,7 @@
 {
   "basics": {
     "name": "Aditya Murarka",
-    "title": "Software Engineer | MS in Software Engineering @ ASU | Ex-Walmart Global Tech India",
+    "title": "Software Engineer | MS in Software Engineering @ Arizona State University | Ex-Walmart Global Tech India",
     "summary": "Software engineer with 5+ years of industry experience building and scaling production systems across frontend and backend stacks. I have developed event-driven platforms, modernized legacy systems, and built secure, high-performance applications for enterprise use cases.\nCurrently pursuing a Master's in Software Engineering at Arizona State University (Expected May 2026). Open to full-time software engineering opportunities in the U.S.",
     "location": "San Jose, CA",
     "email": "adityamurarka14@gmail.com",
@@ -104,11 +104,10 @@
       "items": [
         "LangChain",
         "RAG",
-        "MCP",
         "ChromaDB",
         "Gemini",
         "scikit-learn",
-        "Model Context Protocol (MCP)",
+        "MCP",
         "PyTorch",
         "NumPy",
         "Pandas",
