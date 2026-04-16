@@ -1,42 +1,41 @@
 {
   "basics": {
     "name": "Aditya Murarka",
-    "title": "Software Engineer | MS in Software Engineering @ ASU | Ex-Walmart Global Tech (Level III)",
-    "summary": "Software engineer with 5+ years of industry experience building and scaling production systems. I've worked on large-scale enterprise applications, modernized legacy systems, and designed backend services, event-driven pipelines, and secure access controls to deliver reliable, high-performance products.\nCurrently pursuing a Master's in Software Engineering at Arizona State University (Expected May 2026). Through academic and personal projects, I've applied AI within backend systems to solve practical engineering problems. Open to full-time software engineering opportunities in the U.S.",
-    "location": "Tempe, Arizona, United States",
+    "title": "Software Engineer | MS in Software Engineering @ ASU | Ex-Walmart Global Tech India",
+    "summary": "Software engineer with 5+ years of industry experience building and scaling production systems across frontend and backend stacks. I have developed event-driven platforms, modernized legacy systems, and built secure, high-performance applications for enterprise use cases.\nCurrently pursuing a Master's in Software Engineering at Arizona State University (Expected May 2026). Open to full-time software engineering opportunities in the U.S.",
+    "location": "San Jose, CA",
     "email": "adityamurarka14@gmail.com",
     "phone": "+1 (623) 275-2054",
     "links": {
-      "linkedin": "www.linkedin.com/in/adityamurarka14",
-      "email_backup": "amuarark3@asu.edu"
+      "linkedin": "https://linkedin.com/in/adityamurarka14",
+      "github": "https://github.com/amurark3",
+      "email_backup": "amurark3@asu.edu"
     }
   },
   "experience": [
     {
       "company": "Walmart Global Tech India",
-      "role": "Software Engineer III",
-      "dates": "March 2022 - July 2024",
-      "location": "Bengaluru, Karnataka, India",
+      "role": "Software Developer III",
+      "dates": "03/22 - 07/24",
+      "location": "Bangalore, Karnataka, India",
       "bullets": [
-        "Engineered an Adobe Analytics dashboard to track supply chain activity, leading to the cleanup of idle resources and achieving a 15% decrease in cloud spending.",
-        "Migrated multiple high-impact AngularJS components to ReactJS, which boosted screen performance by 25–30%, and supported easier feature development.",
-        "Built an event-driven notification pipeline using a Kafka consumer in a Spring Boot backend, exposing REST APIs for user preferences and alert history, and pushing real-time notifications to a React frontend via WebSockets.",
-        "Implemented IAM-driven authorization using JWT token to enforce secure, feature-level authorization, enabling granular, scalable access management across the application.",
-        "Re-architected Excel-based workflows into backend-driven web platforms, improving data consistency, eliminating human errors, and adding auditable, traceable state transitions for supply-chain operations.",
-        "Achieved 92%+ test coverage using the Jest framework, significantly reducing production bugs and technical debt."
+        "Co-developed a RAG-based chatbot to query downstream supply chain and inventory systems; spearheaded the React UI architecture and backend API integration.",
+        "Engineered an event-driven notification pipeline using a Kafka consumer in a Spring Boot backend; exposed REST APIs and pushed real-time status updates to a React frontend via WebSockets.",
+        "Migrated multiple high-impact AngularJS components to ReactJS, resolving legacy bottlenecks and boosting screen performance by 25–30% while accelerating new feature development.",
+        "Developed an Adobe Analytics dashboard to meticulously track supply chain activity, identifying idle resources and directly driving a 15% decrease in overall cloud spending.",
+        "Implemented IAM-driven authentication using a JWT to enforce secure, feature-level authorization, enabling granular, scalable access management across the application.",
+        "Identified error-prone Excel-based supply chain workflows as a data integrity risk; re-architected them into backend-driven web platforms with auditable state transitions, eliminating manual data entry errors and improving operational traceability."
       ]
     },
     {
       "company": "Nineleaps",
-      "role": "Software Developer Engineer 1",
-      "dates": "Aug 2019 - March 2022",
-      "location": "Bangalore Urban, Karnataka, India",
+      "role": "Software Developer I",
+      "dates": "08/19 - 03/22",
+      "location": "Bangalore, Karnataka, India",
       "bullets": [
-        "Created interactive dashboards with Chart.js that enabled users to track KPIs in real time and cut manual reporting effort by providing the option to download and share these reports.",
-        "Engineered reusable multi-step form components with validations, improving the efficiency of the flow by 20% and improving overall user experience.",
-        "Introduced Storybook for component documentation, reducing onboarding time and cutting UI integration bugs.",
-        "Contributed to monorepo architecture, reducing code duplication by 30% and improving cross-project development efficiency.",
-        "Optimized code with code-splitting and lazy loading, improving page load times by 25% and boosting Lighthouse scores."
+        "Directed a frontend team of 5 engineers to deliver SPRY, a US sports compliance platform; orchestrated sprint planning and code reviews while constructing the core contract system utilizing complex multi-step forms, file uploads, and Chart.js earnings visualizations.",
+        "Architected a dynamic Content Management System utilizing GrapeJS, TypeScript, and Redux-Saga, engineering recursive-tree site navigation and a custom widget library enabling non-technical users to build and publish web applications.",
+        "Executed the frontend transition to a monorepo structure and established a centralized Storybook component library, slashing codebase duplication by 30% and expediting cross-project delivery timelines."
       ]
     }
   ],
@@ -44,48 +43,43 @@
     {
       "title": "Cloud Cost Optimization",
       "metric": "15% decrease",
-      "context": "Engineered an Adobe Analytics dashboard to track supply chain activity, leading to cleanup of idle resources."
+      "context": "Built an Adobe Analytics dashboard to track supply chain activity and identify idle resources."
     },
     {
       "title": "Performance Boost",
       "metric": "25–30% boost",
-      "context": "Migrated multiple high-impact AngularJS components to ReactJS, enhancing screen performance."
-    },
-    {
-      "title": "Efficient Form Flows",
-      "metric": "20% improvement",
-      "context": "Engineered reusable multi-step form components with validations."
+      "context": "Migrated high-impact AngularJS components to ReactJS and resolved legacy bottlenecks."
     },
     {
       "title": "Code Reusability",
       "metric": "30% reduction",
-      "context": "Contributed to monorepo architecture, reducing code duplication."
-    },
-    {
-      "title": "Page Load Optimization",
-      "metric": "25% improvement",
-      "context": "Optimized code with code-splitting and lazy loading."
-    },
-    {
-      "title": "Code Quality",
-      "metric": "92%+ coverage",
-      "context": "Test coverage using the Jest framework."
+      "context": "Transitioned frontend to a monorepo and centralized Storybook component library."
     }
   ],
   "projects": [
     {
+      "title": "WeVibe - iOS Dating App",
+      "location": "Arizona State University, Tempe, AZ",
+      "dates": "Jan 2026 - May 2026",
+      "bullets": [
+        "Designed a native iOS application using SwiftUI, establishing a scalable routing system with NavigationStack and predictable, centralized @Observable state management.",
+        "Orchestrated real-time matchmaking and chat features via WebSockets, seamlessly synchronizing complex UI states with background backend events using modern Swift concurrency.",
+        "Incorporated secure Firebase and Apple SSO authentication pipelines, and structured a resilient photo upload system utilizing raw URLSessions to interface directly with Google Cloud Storage."
+      ]
+    },
+    {
       "title": "F1 AI",
       "location": "Arizona State University, Tempe, AZ",
-      "dates": "May 2025 – Jul 2025",
+      "dates": "May 2025 - Jul 2025",
       "url": "https://f1-ai-delta.vercel.app",
       "bullets": [
-        "Developed an AI-powered Formula 1 race engineer assistant using Next.js, FastAPI, and Tailwind CSS, featuring a natural language chatbot that leverages an MCP server to dynamically invoke backend tools for race schedules, standings, session results, and driver comparisons."
+        "Developed an AI-powered Formula 1 race engineer assistant featuring a streaming LangChain and Gemini 2.0 Flash reasoning loop, RAG over FIA regulation PDFs via ChromaDB, a GradientBoosting race prediction model, and real-time AI commentary engine with WebSocket live timing, deployed across web, iOS, and MCP server."
       ]
     },
     {
       "title": "Gotham Watch – Crime Analysis Platform",
       "location": "Arizona State University, Tempe, AZ",
-      "dates": "Oct 2024 – Dec 2024",
+      "dates": "Oct 2024 - Dec 2024",
       "url": "https://github.com/amurark3/gotham-watch",
       "bullets": [
         "Built an interactive crime analysis platform using Python, React.js, and GraphDB, leading data preprocessing, backend architecture with Flask and SPARQL queries, dynamic visualizations, and deployment on Microsoft Azure for scalable real-time access."
@@ -99,6 +93,7 @@
         "JavaScript",
         "TypeScript",
         "Python",
+        "Swift",
         "Java",
         "SQL",
         "SPARQL"
@@ -107,8 +102,13 @@
     {
       "category": "AI/ML",
       "items": [
+        "LangChain",
+        "RAG",
+        "MCP",
+        "ChromaDB",
+        "Gemini",
+        "scikit-learn",
         "Model Context Protocol (MCP)",
-        "Retrieval-Augmented Generation (RAG)",
         "PyTorch",
         "NumPy",
         "Pandas",
@@ -118,8 +118,9 @@
     {
       "category": "Frontend",
       "items": [
-        "Next.js",
         "React.js",
+        "Next.js",
+        "SwiftUI",
         "Redux",
         "Tailwind CSS",
         "Storybook",
@@ -129,24 +130,28 @@
     {
       "category": "Backend",
       "items": [
+        "Node.js",
+        "Spring Boot",
         "FastAPI",
         "Flask",
-        "Spring Boot",
-        "Node.js",
         "REST APIs",
-        "WebSockets"
+        "WebSockets",
+        "Socket.IO",
+        "Firebase",
+        "Prisma ORM"
       ]
     },
     {
       "category": "Tools & Infrastructures",
       "items": [
+        "AWS (EC2, Lambda, S3, SQS)",
         "Microsoft Azure",
         "Kafka",
         "GraphDB",
-        "Postman",
         "JWT",
         "Git",
-        "WSL"
+        "PostgreSQL/PostGIS",
+        "Xcode"
       ]
     },
     {
@@ -171,7 +176,14 @@
       "institution": "Arizona State University",
       "degree": "Master of Science - MS, Computer Software Engineering",
       "dates": "August 2024 - May 2026",
-      "location": "Tempe, Arizona, United States"
+      "location": "Tempe, Arizona, United States",
+      "coursework": [
+        "Data Structures & Algorithms",
+        "Semantic Web",
+        "Data Visualization",
+        "Cyber Security",
+        "Cloud Computing"
+      ]
     },
     {
       "institution": "Manipal University Jaipur",
