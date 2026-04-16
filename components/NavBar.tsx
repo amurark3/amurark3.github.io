@@ -45,7 +45,7 @@ export function NavBar() {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 1, duration: 0.5 }}
-            className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] bg-gray-950/80 backdrop-blur-2xl rounded-full p-2 border border-white/20 flex items-center gap-2 shadow-[0_0_30px_rgba(0,0,0,0.5)]"
+            className="fixed bottom-6 inset-x-0 mx-auto w-fit z-[100] bg-gray-950/80 backdrop-blur-2xl rounded-full p-2 border border-white/20 flex items-center gap-2 shadow-[0_0_30px_rgba(0,0,0,0.5)]"
         >
             {navItems.map((item) => {
                 const isActive = activeSection === item.id;
