@@ -15,27 +15,28 @@
   "experience": [
     {
       "company": "Walmart Global Tech India",
-      "role": "Software Developer III",
+      "role": "Software Engineer III",
       "dates": "03/22 - 07/24",
       "location": "Bangalore, Karnataka, India",
       "bullets": [
-        "Co-developed a RAG-based chatbot to query downstream supply chain and inventory systems; spearheaded the React UI architecture and backend API integration.",
-        "Engineered an event-driven notification pipeline using a Kafka consumer in a Spring Boot backend; exposed REST APIs and pushed real-time status updates to a React frontend via WebSockets.",
+        "Co-developed a Retrieval-Augmented Generation chatbot to query downstream supply chain and inventory systems, spearheading the React UI architecture and backend API integration.",
+        "Engineered an event-driven notification pipeline using a Kafka consumer in a Spring Boot backend, exposing RESTful APIs to push real-time status updates to a React frontend via WebSockets.",
         "Migrated multiple high-impact AngularJS components to ReactJS, resolving legacy bottlenecks and boosting screen performance by 25–30% while accelerating new feature development.",
         "Developed an Adobe Analytics dashboard to meticulously track supply chain activity, identifying idle resources and directly driving a 15% decrease in overall cloud spending.",
-        "Implemented IAM-driven authentication using a JWT to enforce secure, feature-level authorization, enabling granular, scalable access management across the application.",
+        "Implemented IAM-driven authentication using JSON Web Tokens to enforce secure, feature-level authorization, enabling granular, scalable access management across the application.",
         "Identified error-prone Excel-based supply chain workflows as a data integrity risk; re-architected them into backend-driven web platforms with auditable state transitions, eliminating manual data entry errors and improving operational traceability."
       ]
     },
     {
       "company": "Nineleaps",
-      "role": "Software Developer I",
+      "role": "Software Engineer I",
       "dates": "08/19 - 03/22",
       "location": "Bangalore, Karnataka, India",
       "bullets": [
-        "Directed a frontend team of 5 engineers to deliver SPRY, a US sports compliance platform; orchestrated sprint planning and code reviews while constructing the core contract system utilizing complex multi-step forms, file uploads, and Chart.js earnings visualizations.",
+        "Directed a frontend team of 5 engineers to deliver SPRY, a US sports compliance platform, orchestrating sprint planning and code reviews while constructing the core contract system utilizing multi-step forms, file uploads, and earnings visualizations.",
         "Architected a dynamic Content Management System utilizing GrapeJS, TypeScript, and Redux-Saga, engineering recursive-tree site navigation and a custom widget library enabling non-technical users to build and publish web applications.",
-        "Executed the frontend transition to a monorepo structure and established a centralized Storybook component library, slashing codebase duplication by 30% and expediting cross-project delivery timelines."
+        "Executed the frontend transition to a monorepo structure and established a centralized Storybook component library, slashing codebase duplication by 30% and expediting cross-project delivery timelines.",
+        "Developed apnaIAS, an ed-tech platform for civil service exam preparation, building survey creation flows with dynamic result visualizations and integrating Razorpay for user subscription management."
       ]
     }
   ],
@@ -64,7 +65,7 @@
       "bullets": [
         "Designed a native iOS application using SwiftUI, establishing a scalable routing system with NavigationStack and predictable, centralized @Observable state management.",
         "Orchestrated real-time matchmaking and chat features via WebSockets, seamlessly synchronizing complex UI states with background backend events using modern Swift concurrency.",
-        "Incorporated secure Firebase and Apple SSO authentication pipelines, and structured a resilient photo upload system utilizing raw URLSessions to interface directly with Google Cloud Storage."
+        "Incorporated secure Firebase and Apple Single Sign-On authentication pipelines, and structured a resilient photo upload system utilizing raw URLSessions to interface directly with Google Cloud Storage."
       ]
     },
     {
@@ -73,7 +74,8 @@
       "dates": "May 2025 - Jul 2025",
       "url": "https://f1-ai-delta.vercel.app",
       "bullets": [
-        "Developed an AI-powered Formula 1 race engineer assistant featuring a streaming LangChain and Gemini 2.0 Flash reasoning loop, RAG over FIA regulation PDFs via ChromaDB, a GradientBoosting race prediction model, and real-time AI commentary engine with WebSocket live timing, deployed across web, iOS, and MCP server."
+        "Built and deployed a personal AI-powered Formula 1 race engineer that lets users query live race data, get natural language analysis, and receive real-time AI commentary during active sessions, accessible via web, iOS, and Claude Desktop through an MCP server integration.",
+        "Engineered the AI backend as a multi-tool agentic system with a RAG pipeline over official FIA regulations, a machine learning race prediction model, and a WebSocket live timing engine polling real-time race telemetry to power the commentary feed."
       ]
     },
     {
@@ -178,7 +180,6 @@
       "location": "Tempe, Arizona, United States",
       "coursework": [
         "Data Structures & Algorithms",
-        "Semantic Web",
         "Data Visualization",
         "Cyber Security",
         "Cloud Computing"
@@ -190,13 +191,6 @@
       "dates": "2015 - 2019",
       "location": "Jaipur, Rajasthan, India"
     }
-  ],
-  "certifications": [
-    "R Programming",
-    "SQL for Data Science",
-    "Responsive Web Design",
-    "Machine Learning",
-    "The Data Scientist's Toolbox"
   ],
   "awards": [
     "Excellence award recipient at Walmart Global Tech India for outstanding performance in developing Omni Item Allocation features, performance optimizations, and implementing comprehensive analytics tracking (May 2023)",
