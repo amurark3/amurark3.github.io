@@ -83,6 +83,7 @@ export const resume: Resume = {
     name: "Aditya Murarka",
     firstName: "aditya",
     role: "Software Engineer",
+    heroImage: "/profile.png",
     location: "San Jose, CA",
     email: "adityamurarka14@gmail.com",
     links: {
