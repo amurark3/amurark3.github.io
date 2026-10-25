@@ -1,49 +1,61 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { GraduationCap } from "lucide-react";
-import resumeData from "@/data/resume.json";
+import { resume } from "@/data/resume";
+import { FadeIn } from "@/components/FadeIn";
+import { SectionHeader } from "@/components/SectionHeader";
 
 export function EducationSection() {
-    const { education } = resumeData;
+  return (
+    <section id="education" className="section">
+      <FadeIn>
+        <SectionHeader title="education" />
+      </FadeIn>
 
-    return (
-        <section id="education" className="py-24 px-6 relative z-10 bg-gradient-to-t from-[#030308] to-emerald-900/10">
-            <div className="max-w-5xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    className="flex items-center gap-4 mb-10"
-                >
-                    <div className="w-12 h-12 rounded-full glass flex items-center justify-center bg-emerald-500/10 text-emerald-400">
-                        <GraduationCap className="w-6 h-6" />
-                    </div>
-                    <h2 className="text-4xl font-bold">Education</h2>
-                </motion.div>
+      <ul className="space-y-10">
+        {resume.education.map((entry) => (
+          <FadeIn key={entry.school} as="li">
+            <h3 className="text-[22px] font-bold leading-tight text-slate-lightest md:text-[28px]">{entry.degree}</h3>
+            <a
+              href={entry.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xl font-bold text-mint transition-colors hover:text-slate-lightest"
+            >
+              {entry.school}
+            </a>
+            <p className="mt-1 text-lg text-slate">
+              {entry.period} · {entry.location}
+              {entry.gpa && ` · GPA ${entry.gpa}`}
+            </p>
+            {entry.coursework && (
+              <>
+                <p className="mt-4 text-lg text-slate">Relevant coursework:</p>
+                <ul className="arrow-list mt-2 grid max-w-[650px] grid-cols-1 gap-x-6 gap-y-1 text-lg text-slate min-[480px]:grid-cols-2">
+                  {entry.coursework.map((course) => (
+                    <li key={course}>{course}</li>
+                  ))}
+                </ul>
+              </>
+            )}
+          </FadeIn>
+        ))}
+      </ul>
 
-                <div className="flex flex-col gap-6">
-                    {education.map((edu, idx) => (
-                        <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, margin: "0px" }}
-                            transition={{ delay: idx * 0.1 }}
-                            className="glass-card p-6 rounded-2xl border border-emerald-500/20 hover:border-emerald-400/50 transition-colors"
-                        >
-                            <h3 className="text-xl font-bold text-white mb-1 group-hover:text-emerald-400 transition-colors">
-                                {edu.degree}
-                            </h3>
-                            <p className="text-lg text-emerald-300 font-medium mb-4">{edu.institution}</p>
-                            <div className="flex items-center justify-between text-sm text-gray-400">
-                                <span>{edu.dates}</span>
-                                {edu.location && <span>{edu.location}</span>}
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+      <FadeIn className="mt-14">
+        <h3 className="mb-4 text-[22px] font-bold text-slate-lightest md:text-[28px]">Honors &amp; awards</h3>
+        <ul className="arrow-list max-w-[750px] space-y-3 text-lg leading-snug text-slate">
+          {resume.awards.map((award) => (
+            <li key={award.title}>
+              <span className="font-bold text-slate-lightest">{award.title}</span>
+              <span className="text-mint">
+                {" "}
+                · {award.organization}
+                {award.date && `, ${award.date}`}
+              </span>
+              <br />
+              {award.detail}
+            </li>
+          ))}
+        </ul>
+      </FadeIn>
+    </section>
+  );
 }

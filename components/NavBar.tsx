@@ -1,80 +1,141 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { Home, Briefcase, FolderGit2, Trophy, Code2, GraduationCap } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { resume } from "@/data/resume";
+import { cn } from "@/lib/utils";
+import { SocialLinks } from "@/components/SocialLinks";
 
-const navItems = [
-    { id: "hero", icon: Home, label: "Home" },
-    { id: "experience", icon: Briefcase, label: "Experience" },
-    { id: "projects", icon: FolderGit2, label: "Projects" },
-    { id: "achievements", icon: Trophy, label: "Achievements" },
-    { id: "skills", icon: Code2, label: "Skills" },
-    { id: "education", icon: GraduationCap, label: "Education" },
-];
+const NAV_ITEMS = [
+  { id: "intro", label: "home" },
+  { id: "about", label: "about" },
+  { id: "experience", label: "experience" },
+  { id: "projects", label: "projects" },
+  { id: "skills", label: "skills" },
+  { id: "education", label: "education" },
+] as const;
+
+type SectionId = (typeof NAV_ITEMS)[number]["id"];
+
+function useActiveSection(): SectionId {
+  const [active, setActive] = useState<SectionId>("intro");
+
+  useEffect(() => {
+    // A thin band across the middle of the viewport decides which section is "current".
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const hit = entries.find((entry) => entry.isIntersecting);
+        if (hit) setActive(hit.target.id as SectionId);
+      },
+      { rootMargin: "-45% 0px -50% 0px" },
+    );
+    NAV_ITEMS.forEach(({ id }) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+    return () => observer.disconnect();
+  }, []);
+
+  return active;
+}
+
+interface NavLinksProps {
+  active: SectionId;
+  onNavigate?: () => void;
+  className?: string;
+}
+
+function NavLinks({ active, onNavigate, className }: NavLinksProps) {
+  return (
+    <ul className={className}>
+      {NAV_ITEMS.map(({ id, label }) => (
+        <li key={id}>
+          <a
+            href={`#${id}`}
+            onClick={onNavigate}
+            aria-current={active === id ? "location" : undefined}
+            className={cn(
+              "block text-base font-bold transition-colors duration-200 hover:text-mint",
+              active === id ? "text-mint" : "text-slate-lightest",
+            )}
+          >
+            <span className="text-mint">/</span>
+            {label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function ResumeButton({ className }: { className?: string }) {
+  return (
+    <a
+      href={resume.basics.links.resume}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={cn(
+        "rounded border border-mint px-4 py-1.5 text-base font-bold text-mint transition-colors duration-200 hover:bg-mint-tint",
+        className,
+      )}
+    >
+      resume
+    </a>
+  );
+}
 
 export function NavBar() {
-    const [activeSection, setActiveSection] = useState("hero");
+  const active = useActiveSection();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id);
-                    }
-                });
-            },
-            { threshold: 0.3 }
-        );
-
-        navItems.forEach((item) => {
-            const el = document.getElementById(item.id);
-            if (el) observer.observe(el);
-        });
-
-        return () => observer.disconnect();
-    }, []);
-
-    const scrollTo = (id: string) => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
     };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [menuOpen]);
 
-    return (
-        <motion.nav
-            initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 1, duration: 0.5 }}
-            className="fixed bottom-6 inset-x-0 mx-auto w-fit z-[100] bg-gray-950/80 backdrop-blur-2xl rounded-full p-2 border border-white/20 flex items-center gap-2 shadow-[0_0_30px_rgba(0,0,0,0.5)]"
+  return (
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-navy-lightest bg-navy/85 backdrop-blur-md">
+      <nav aria-label="Primary" className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-6">
+        <a href="#intro" className="text-xl font-bold text-slate-lightest transition-colors hover:text-mint">
+          {resume.basics.name}
+        </a>
+
+        <NavLinks active={active} className="hidden items-center gap-6 lg:flex xl:gap-8" />
+
+        <div className="hidden items-center gap-5 lg:flex">
+          <SocialLinks />
+          <ResumeButton />
+        </div>
+
+        <button
+          type="button"
+          className="text-slate-lightest transition-colors hover:text-mint lg:hidden"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setMenuOpen((open) => !open)}
         >
-            {navItems.map((item) => {
-                const isActive = activeSection === item.id;
-                const Icon = item.icon;
-                return (
-                    <button
-                        key={item.id}
-                        onClick={() => scrollTo(item.id)}
-                        className={`relative p-3 rounded-full flex items-center justify-center transition-colors group ${isActive ? "text-white" : "text-gray-500 hover:text-gray-300"
-                            }`}
-                        aria-label={item.label}
-                        title={item.label}
-                    >
-                        {isActive && (
-                            <motion.div
-                                layoutId="nav-pill"
-                                className="absolute inset-0 bg-white/10 rounded-full border border-white/20"
-                                transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                            />
-                        )}
-                        <Icon className="w-5 h-5 relative z-10" />
+          {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+      </nav>
 
-                        {/* Tooltip on desktop */}
-                        <span className="absolute -top-10 scale-0 group-hover:scale-100 transition-transform bg-gray-900 text-white text-xs py-1 px-2 rounded hidden md:block border border-white/10">
-                            {item.label}
-                        </span>
-                    </button>
-                );
-            })}
-        </motion.nav>
-    );
+      {menuOpen && (
+        <div id="mobile-menu" className="border-t border-navy-lightest px-6 pb-6 pt-2 lg:hidden">
+          <NavLinks
+            active={active}
+            onNavigate={() => setMenuOpen(false)}
+            className="flex flex-col gap-1 [&_a]:py-2"
+          />
+          <div className="mt-4 flex items-center justify-between">
+            <SocialLinks />
+            <ResumeButton />
+          </div>
+        </div>
+      )}
+    </header>
+  );
 }

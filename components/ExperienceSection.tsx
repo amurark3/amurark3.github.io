@@ -1,140 +1,105 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
-import { Briefcase, ChevronDown, Calendar, MapPin, Zap } from "lucide-react";
-import resumeData from "@/data/resume.json";
+import { useRef, useState, type KeyboardEvent } from "react";
+import { resume } from "@/data/resume";
+import { cn } from "@/lib/utils";
+import { FadeIn } from "@/components/FadeIn";
+import { SectionHeader } from "@/components/SectionHeader";
+
+const jobs = resume.experience;
+const tabId = (index: number): string => `experience-tab-${index}`;
+const panelId = (index: number): string => `experience-panel-${index}`;
+
+const NEXT_KEYS = new Set(["ArrowDown", "ArrowRight"]);
+const PREV_KEYS = new Set(["ArrowUp", "ArrowLeft"]);
 
 export function ExperienceSection() {
-    const [expandedId, setExpandedId] = useState<number | null>(0); // first open by default
+  const [selected, setSelected] = useState(0);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
-    const toggleExpand = (id: number) => {
-        setExpandedId((prev) => (prev === id ? null : id));
-    };
+  const focusTab = (index: number) => {
+    const wrapped = (index + jobs.length) % jobs.length;
+    setSelected(wrapped);
+    tabRefs.current[wrapped]?.focus();
+  };
 
-    // Find most measurable bullets for impact highlights (any bullet with '%' or '$' or numbers)
-    const impactHighlights = resumeData.experience
-        .flatMap((exp) => exp.bullets)
-        .filter((bullet) => bullet.includes("%") || bullet.includes("+"))
-        .slice(0, 3); // top 3
+  const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (NEXT_KEYS.has(event.key)) focusTab(selected + 1);
+    else if (PREV_KEYS.has(event.key)) focusTab(selected - 1);
+    else if (event.key === "Home") focusTab(0);
+    else if (event.key === "End") focusTab(jobs.length - 1);
+    else return;
+    event.preventDefault();
+  };
 
-    return (
-        <section id="experience" className="py-24 px-6 relative z-10">
-            <div className="max-w-5xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="flex items-center gap-4 mb-12"
-                >
-                    <div className="w-12 h-12 rounded-full glass flex items-center justify-center bg-blue-500/10 text-blue-400">
-                        <Briefcase className="w-6 h-6" />
-                    </div>
-                    <h2 className="text-4xl font-bold">Experience</h2>
-                </motion.div>
+  const job = jobs[selected];
 
-                {/* Impact Highlights Panel */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mb-12"
-                >
-                    <h3 className="text-sm uppercase tracking-widest text-gray-500 mb-4 font-semibold">Top Impact Highlights</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        {impactHighlights.map((highlight, idx) => (
-                            <div key={idx} className="glass-card p-5 rounded-xl border border-blue-500/20 hover:border-blue-400/50 transition-colors">
-                                <Zap className="w-5 h-5 text-blue-400 mb-3" />
-                                <p className="text-sm text-gray-300 leading-relaxed">{highlight}</p>
-                            </div>
-                        ))}
-                    </div>
-                </motion.div>
+  return (
+    <section id="experience" className="section">
+      <FadeIn>
+        <SectionHeader title="experience" />
+        <div className="flex flex-col gap-6 md:flex-row md:gap-8">
+          <div
+            role="tablist"
+            aria-label="Companies"
+            onKeyDown={onKeyDown}
+            className="flex overflow-x-auto md:w-max md:shrink-0 md:flex-col md:overflow-visible"
+          >
+            {jobs.map((entry, index) => (
+              <button
+                key={entry.tabLabel}
+                ref={(node) => {
+                  tabRefs.current[index] = node;
+                }}
+                id={tabId(index)}
+                type="button"
+                role="tab"
+                aria-selected={selected === index}
+                aria-controls={panelId(index)}
+                tabIndex={selected === index ? 0 : -1}
+                onClick={() => setSelected(index)}
+                className={cn(
+                  "whitespace-nowrap border-b-2 px-5 py-3 text-left text-lg transition-colors duration-200 hover:bg-mint-tint hover:text-mint md:border-b-0 md:border-l-2",
+                  selected === index ? "border-mint text-mint" : "border-navy-lightest text-slate-lightest",
+                )}
+              >
+                {entry.tabLabel}
+              </button>
+            ))}
+          </div>
 
-                {/* Experience Timeline / Cards */}
-                <div className="flex flex-col gap-6">
-                    {resumeData.experience.map((exp, idx) => {
-                        const isExpanded = expandedId === idx;
-                        return (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "0px" }}
-                                transition={{ delay: idx * 0.1 }}
-                                className={`glass-card rounded-2xl overflow-hidden transition-all duration-300 border ${isExpanded ? "border-blue-500/40 bg-white/[0.04]" : "border-white/10 hover:border-white/20"
-                                    }`}
-                            >
-                                <button
-                                    onClick={() => toggleExpand(idx)}
-                                    className="w-full text-left p-6 flex flex-col md:flex-row md:items-center justify-between gap-4"
-                                >
-                                    <div className="flex-1 text-left">
-                                        <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">
-                                            {exp.role}
-                                        </h3>
-                                        <p className="text-lg text-blue-300 font-medium">{exp.company}</p>
-                                    </div>
-                                    <div className="flex items-center gap-6">
-                                        <div className="flex flex-col md:items-end gap-2 text-sm text-gray-400">
-                                            <div className="flex items-center gap-2">
-                                                <Calendar className="w-4 h-4" />
-                                                <span>{exp.dates}</span>
-                                            </div>
-                                            <div className="flex items-center gap-2">
-                                                <MapPin className="w-4 h-4" />
-                                                <span>{exp.location}</span>
-                                            </div>
-                                        </div>
-                                        <div className={`hidden md:flex items-center justify-center w-10 h-10 flex-shrink-0 rounded-full glass transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`}>
-                                            <ChevronDown className="w-5 h-5" />
-                                        </div>
-                                    </div>
-                                </button>
-
-                                <AnimatePresence>
-                                    {isExpanded && (
-                                        <motion.div
-                                            initial={{ height: 0, opacity: 0 }}
-                                            animate={{ height: "auto", opacity: 1 }}
-                                            exit={{ height: 0, opacity: 0 }}
-                                            transition={{ duration: 0.3 }}
-                                            className="overflow-hidden"
-                                        >
-                                            <div className="p-6 pt-0 border-t border-white/10 mt-2">
-                                                <ul className="space-y-4">
-                                                    {exp.bullets.map((bullet, blIdx) => {
-                                                        // Extract metrics (numbers, %, $) to highlight them as chips
-                                                        const words = bullet.split(" ");
-                                                        return (
-                                                            <li key={blIdx} className="flex gap-4 group">
-                                                                <div className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-500 group-hover:scale-150 transition-transform flex-shrink-0" />
-                                                                <p className="text-gray-300 leading-relaxed text-base">
-                                                                    {words.map((word, wIdx) => {
-                                                                        const isMetric = /[0-9]+%|[0-9]+\+|[0-9]+[kM]|decrease|boost|improvement/i.test(word);
-                                                                        if (isMetric) {
-                                                                            return (
-                                                                                <span key={wIdx} className="inline-block px-1.5 py-0.5 mx-0.5 rounded bg-blue-500/20 text-blue-300 font-medium">
-                                                                                    {word}{" "}
-                                                                                </span>
-                                                                            );
-                                                                        }
-                                                                        return <span key={wIdx}>{word} </span>;
-                                                                    })}
-                                                                </p>
-                                                            </li>
-                                                        );
-                                                    })}
-                                                </ul>
-                                            </div>
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </motion.div>
-                        );
-                    })}
-                </div>
-            </div>
-        </section>
-    );
+          <div
+            key={selected}
+            id={panelId(selected)}
+            role="tabpanel"
+            aria-labelledby={tabId(selected)}
+            tabIndex={0}
+            className="min-h-[420px] focus:outline-none"
+          >
+            <h3 className="text-[22px] font-bold leading-tight md:text-[28px]">
+              <span className="text-slate-lightest">{job.role} </span>
+              <a
+                href={job.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-mint transition-colors hover:text-slate-lightest"
+              >
+                @ {job.company}
+              </a>
+            </h3>
+            <p className="mt-1 text-lg text-slate">
+              {job.period} · {job.location}
+            </p>
+            <ul className="arrow-list mt-6 max-w-[650px] space-y-4 text-lg leading-snug text-slate">
+              {job.bullets.map((bullet, index) => (
+                <FadeIn key={bullet} as="li" delayMs={(index + 1) * 80}>
+                  {bullet}
+                </FadeIn>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </FadeIn>
+    </section>
+  );
 }
