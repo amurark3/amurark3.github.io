@@ -1,0 +1,37 @@
+# WindBorne — Full Stack Security Software Engineer Challenge
+# Aditya Murarka
+
+------------------------------------------------------------
+QUESTION 1: PRODUCTION RELIABILITY
+------------------------------------------------------------
+
+What's the most pain you've personally experienced running a 24/7 production system? What broke, and what did you change afterward?
+
+ANSWER:
+
+One of the toughest production issues I encountered at Walmart Global Tech involved a failed release of a shared component library used across multiple applications.
+
+The challenging part was the blast radius. A change to a shared dependency could affect several applications and teams simultaneously, making it harder to isolate the root cause. I investigated the failure, identified the problematic library release, and helped roll it back to restore stability.
+
+The experience changed how I approached shared dependencies and production releases. We improved versioning and release coordination across teams to reduce the risk of similar failures.
+
+My biggest takeaway was that reliability isn't just about writing correct code. It's about understanding how changes propagate through a system, limiting their impact, and ensuring there's a safe path to recovery when something goes wrong.
+
+
+------------------------------------------------------------
+QUESTION 2: QUESTIONING BEST PRACTICES
+------------------------------------------------------------
+
+What's a "best practice" you disagree with after real-world experience?
+
+ANSWER:
+
+I disagree with the idea that maximizing code reuse is always the right architectural decision.
+
+At Walmart Global Tech, I worked with micro-frontends and shared component libraries designed to reduce duplication and maintain consistency. While that approach had clear benefits, I also experienced its downside when a problematic shared library release introduced regressions across applications.
+
+That experience taught me that excessive reuse can create hidden coupling. When multiple independently developed applications rely on the same shared dependency, even a small change can have a much larger impact than expected.
+
+I now prefer balancing reuse with isolation and independent deployability. I'd rather tolerate a little duplication than introduce dependencies that make releases risky or require multiple teams to coordinate every change.
+
+For me, good engineering isn't about following best practices blindly. It's about understanding the tradeoffs and choosing what makes the system more reliable, maintainable, and easier to evolve.
