@@ -1,0 +1,190 @@
+/* Section heads and the experience chapters. Tokens live in base.css. */
+
+/* --------------------------------------------------------------------------
+   Section heads (§ 02, § 03, § 04)
+   -------------------------------------------------------------------------- */
+
+.section-head {
+  row-gap: var(--s-5);
+  padding-top: var(--s-3);
+  margin-bottom: var(--s-7);
+  border-top: 1px solid var(--ink);
+}
+
+@media (min-width: 52rem) {
+  .section-head {
+    margin-bottom: var(--s-8);
+  }
+
+  .section-head .kicker {
+    grid-column: 1 / -1;
+  }
+
+  .section-head h2 {
+    grid-column: 1 / 10;
+  }
+
+  .section-head--offset h2 {
+    grid-column: 4 / 13;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   § 02 — Professional experience
+   -------------------------------------------------------------------------- */
+
+.record {
+  padding-bottom: var(--s-8);
+}
+
+.chapter {
+  row-gap: var(--s-5);
+  padding-block: var(--s-6);
+  border-top: 1px solid var(--rule);
+}
+
+.chapter__numeral {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  color: var(--accent);
+}
+
+.chapter__company {
+  margin-top: var(--s-3);
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  font-variation-settings: "opsz" 72, "SOFT" 100, "WONK" 0;
+  text-wrap: balance;
+}
+
+.chapter__company a {
+  text-decoration-color: transparent;
+}
+
+.chapter__company a:hover {
+  text-decoration-color: currentColor;
+}
+
+.chapter__role {
+  margin-top: var(--s-2);
+  font-weight: 600;
+}
+
+.chapter__dates {
+  margin-top: var(--s-3);
+  font-family: var(--font-label);
+  font-size: var(--step-xs);
+  line-height: 1.7;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-3);
+}
+
+.pullquote {
+  max-width: 28ch;
+  margin-bottom: var(--s-6);
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 72, "SOFT" 100, "WONK" 1;
+  text-wrap: balance;
+}
+
+.pullquote em {
+  font-style: normal;
+  color: var(--accent-ink);
+}
+
+.entries {
+  counter-reset: entry;
+  border-top: 1px solid var(--rule);
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  column-gap: var(--s-3);
+  row-gap: var(--s-2);
+  padding-block: var(--s-4);
+  border-bottom: 1px solid var(--rule);
+  counter-increment: entry;
+}
+
+.entry::before {
+  content: counter(entry, decimal-leading-zero);
+  grid-row: 1 / 3;
+  padding-top: 0.3em;
+  font-family: var(--font-label);
+  font-size: var(--step-xs);
+  color: var(--accent-ink);
+}
+
+.entry__text {
+  max-width: var(--measure);
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+
+.entry__text strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.entry__note {
+  grid-column: 2;
+  font-family: var(--font-display);
+  font-size: var(--step--1);
+  font-style: italic;
+  line-height: 1.4;
+  font-variation-settings: "opsz" 24, "SOFT" 100, "WONK" 1;
+  color: var(--accent-ink);
+}
+
+.entry__note::before {
+  content: "↳ ";
+  font-style: normal;
+}
+
+@media (min-width: 52rem) {
+  .chapter {
+    padding-block: var(--s-7);
+  }
+
+  .chapter__meta {
+    grid-column: 1 / 5;
+    position: sticky;
+    top: var(--s-5);
+    align-self: start;
+  }
+
+  .chapter__body {
+    grid-column: 5 / 13;
+  }
+
+  .entry {
+    grid-template-columns: 3rem minmax(0, 1fr) 11rem;
+    column-gap: var(--gutter);
+  }
+
+  .entry::before {
+    grid-row: auto;
+  }
+
+  /* Marginalia sit in the outer margin, aligned to the entry they annotate. */
+  .entry__note {
+    grid-column: 3;
+    grid-row: 1;
+    padding-top: 0.15em;
+  }
+}

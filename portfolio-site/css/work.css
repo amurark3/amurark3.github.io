@@ -1,0 +1,252 @@
+/* Projects: the F1 AI feature band and the regular projects. Tokens live in base.css. */
+
+/* --------------------------------------------------------------------------
+   § 03 — Projects
+   -------------------------------------------------------------------------- */
+
+.feature {
+  padding-block: var(--s-8);
+}
+
+.feature__grid {
+  row-gap: var(--s-5);
+}
+
+.feature__title {
+  font-family: var(--font-display);
+  font-size: var(--step-4);
+  font-weight: 300;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 0;
+}
+
+.feature__dek {
+  max-width: 22ch;
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.15;
+  font-variation-settings: "opsz" 72, "SOFT" 100, "WONK" 1;
+  text-wrap: balance;
+}
+
+.feature__fig {
+  margin-block: var(--s-4);
+}
+
+.feature__fig .track {
+  stroke: var(--on-ink);
+  stroke-width: 1.6;
+}
+
+.feature__fig .track-mark {
+  stroke: var(--accent-on-ink);
+  stroke-width: 3;
+}
+
+.feature__fig .car {
+  fill: var(--accent-on-ink);
+}
+
+.feature__fig text {
+  font-family: var(--font-label);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  fill: var(--on-ink-2);
+}
+
+.feature__fig figcaption,
+.project__fig figcaption {
+  margin-top: var(--s-3);
+  font-family: var(--font-display);
+  font-size: var(--step--1);
+  font-style: italic;
+  line-height: 1.4;
+  font-variation-settings: "opsz" 24, "SOFT" 100, "WONK" 1;
+}
+
+.feature__fig figcaption {
+  color: var(--on-ink-2);
+}
+
+.feature__body {
+  display: grid;
+  gap: var(--s-3);
+  max-width: var(--measure);
+  color: var(--on-ink-2);
+}
+
+.feature__stats div {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  align-items: baseline;
+  column-gap: var(--s-3);
+  padding-block: var(--s-3);
+  border-top: 1px solid var(--on-ink-rule);
+}
+
+.feature__stats div:last-child {
+  border-bottom: 1px solid var(--on-ink-rule);
+}
+
+.feature__stats dt {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 0;
+  color: var(--accent-on-ink);
+}
+
+.feature__stats dd {
+  color: var(--on-ink-2);
+  line-height: 1.4;
+}
+
+.feature__foot {
+  display: grid;
+  gap: var(--s-4);
+  margin-top: var(--s-4);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--on-ink-rule);
+}
+
+.feature .tech {
+  color: var(--on-ink-2);
+}
+
+.feature .links a {
+  text-decoration-color: var(--on-ink-rule);
+}
+
+@media (min-width: 52rem) {
+  .feature {
+    padding-block: var(--s-9) var(--s-8);
+  }
+
+  .feature__grid > .kicker { grid-column: 1 / -1; grid-row: 1; }
+  .feature__title { grid-column: 1 / 8; grid-row: 2; }
+  .feature__dek { grid-column: 1 / 7; grid-row: 3; }
+  .feature__fig { grid-column: 8 / 13; grid-row: 2 / 4; align-self: center; margin: 0; }
+  .feature__body { grid-column: 2 / 7; grid-row: 4; margin-top: var(--s-6); }
+  .feature__stats { grid-column: 8 / 13; grid-row: 4; margin-top: var(--s-6); align-self: start; }
+
+  .feature__foot {
+    grid-column: 2 / 13;
+    grid-row: 5;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: baseline;
+    margin-top: var(--s-7);
+  }
+}
+
+/* Regular projects */
+
+.project {
+  row-gap: var(--s-4);
+  padding-block: var(--s-8);
+}
+
+.project + .project {
+  border-top: 1px solid var(--rule);
+}
+
+.project__num {
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  color: var(--accent);
+}
+
+.project__title {
+  margin-top: var(--s-3);
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-weight: 300;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 0;
+}
+
+.project__dek {
+  margin-top: var(--s-3);
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  font-style: italic;
+  line-height: 1.3;
+  font-variation-settings: "opsz" 48, "SOFT" 100, "WONK" 1;
+  color: var(--ink-2);
+}
+
+.project__body {
+  display: grid;
+  gap: var(--s-3);
+  max-width: var(--measure);
+  color: var(--ink-2);
+}
+
+.project__body .tech {
+  margin-top: var(--s-2);
+}
+
+.project__fig {
+  max-width: 24rem;
+}
+
+.project__fig .js-draw {
+  stroke: var(--ink);
+  stroke-width: 1.4;
+}
+
+.project__fig .lens {
+  fill: var(--accent);
+}
+
+.project__fig .bubble {
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 1.2;
+}
+
+.project__fig .dot {
+  fill: var(--ink-2);
+}
+
+.project__fig .node {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 1.4;
+}
+
+.project__fig .node--hit {
+  fill: var(--accent);
+  stroke: var(--accent);
+}
+
+.project__fig text {
+  font-family: var(--font-label);
+  font-size: 10px;
+  fill: var(--ink-3);
+}
+
+.project__fig figcaption {
+  color: var(--ink-2);
+}
+
+@media (min-width: 52rem) {
+  .project--wevibe .project__num { grid-column: 1 / 3; grid-row: 1; }
+  .project--wevibe .project__head { grid-column: 3 / 9; grid-row: 1; }
+  .project--wevibe .project__body { grid-column: 3 / 8; grid-row: 2; margin-top: var(--s-4); }
+  .project--wevibe .project__fig { grid-column: 9 / 13; grid-row: 1 / 3; align-self: center; justify-self: end; width: 100%; }
+
+  .project--gotham .project__fig { grid-column: 1 / 5; grid-row: 1 / 3; align-self: end; width: 100%; }
+  .project--gotham .project__num { grid-column: 6 / 8; grid-row: 1; }
+  .project--gotham .project__head { grid-column: 8 / 13; grid-row: 1; }
+  .project--gotham .project__body { grid-column: 8 / 13; grid-row: 2; margin-top: var(--s-4); }
+}
