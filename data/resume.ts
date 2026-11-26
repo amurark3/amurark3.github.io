@@ -163,6 +163,15 @@ export const resume: Resume = {
       live: "https://f1-ai-delta.vercel.app",
     },
     {
+      title: "Elastic Face Recognition",
+      subtitle: "Image Pipeline on AWS",
+      organization: "Arizona State University",
+      period: "Aug 2025 – Dec 2025",
+      description:
+        "A face-recognition image pipeline built three ways on AWS: a Flask web tier on EC2 that streams uploads to S3 and passes only image keys through SQS to up to 15 EC2 workers, scaled to zero by a custom queue-depth autoscaler; serverless Lambda functions packaged as container images in ECR; and face detection moved to an AWS IoT Greengrass edge device over MQTT.",
+      tech: ["AWS S3", "EC2", "SQS", "Lambda", "ECR", "IoT Greengrass", "Python", "PyTorch"],
+    },
+    {
       title: "WeVibe",
       subtitle: "iOS Dating App",
       organization: "Arizona State University",
@@ -203,10 +212,14 @@ export const resume: Resume = {
       ],
     },
     {
+      category: "AWS",
+      items: ["S3", "EC2", "SQS", "Lambda", "ECR", "IAM", "IoT Greengrass"],
+    },
+    {
       category: "Real-Time & AI",
       items: [
-        "WebSockets", "Server-Sent Events (SSE)", "Kafka", "SharedWorker", "Socket.IO", "asyncio",
-        "LangChain", "Agentic AI", "RAG", "MCP", "Groq", "scikit-learn", "NumPy", "Pandas",
+        "WebSockets", "Server-Sent Events (SSE)", "Kafka", "SharedWorker", "Socket.IO", "asyncio", "MQTT",
+        "LangChain", "Agentic AI", "RAG", "MCP", "Groq", "scikit-learn", "PyTorch", "NumPy", "Pandas",
       ],
     },
     {
@@ -219,7 +232,7 @@ export const resume: Resume = {
     {
       category: "Testing & Cloud",
       items: [
-        "Jest", "React Testing Library", "pytest", "Git", "CI/CD", "GitHub Actions", "AWS",
+        "Jest", "React Testing Library", "pytest", "Git", "CI/CD", "GitHub Actions", "Docker",
         "Azure", "Vercel", "Render", "ESLint", "Ruff", "Adobe Analytics",
       ],
     },
